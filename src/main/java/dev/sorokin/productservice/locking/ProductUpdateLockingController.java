@@ -29,9 +29,9 @@ public class ProductUpdateLockingController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDto> update(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestBody ProductUpdateRequest request,
-            @RequestParam(defaultValue = "500") long workMs
+            @RequestParam(value = "workMs", defaultValue = "500") long workMs
     ) {
         log.info("Updating product with locking: id={}", id);
         String lockKey = "product:" + id;

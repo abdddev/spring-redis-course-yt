@@ -42,7 +42,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> getById(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestParam(value = "cacheMode", defaultValue = "NONE_CACHE") CacheMode cacheMode
     ) {
         log.info("Getting product {} with cacheMode={}", id, cacheMode);
@@ -57,7 +57,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDto> update(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestBody ProductUpdateRequest request,
             @RequestParam(value = "cacheMode", defaultValue = "NONE_CACHE") CacheMode cacheMode
 
@@ -73,7 +73,7 @@ public class ProductController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestParam(value = "cacheMode", defaultValue = "NONE_CACHE") CacheMode cacheMode
 
     ) {
