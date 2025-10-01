@@ -16,8 +16,9 @@ SELECT
   'Description for Product ' || gs || ': ' || encode(digest(random()::text,'sha1'),'hex'),
   now() - (random() * interval '365 days'),
   now() - (random() * interval '30 days')
-FROM generate_series(1, 10000000) gs;
+FROM generate_series(1, 40000000) gs;
 
 ANALYZE;
 
 select count(*) from product;
+
