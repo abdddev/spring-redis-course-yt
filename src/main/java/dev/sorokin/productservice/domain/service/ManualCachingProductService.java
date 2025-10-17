@@ -1,16 +1,13 @@
 package dev.sorokin.productservice.domain.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.sorokin.productservice.api.ProductCreateRequest;
 import dev.sorokin.productservice.api.ProductUpdateRequest;
 import dev.sorokin.productservice.domain.ProductService;
 import dev.sorokin.productservice.domain.db.ProductEntity;
 import dev.sorokin.productservice.domain.db.ProductRepository;
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
@@ -63,7 +60,6 @@ public class ManualCachingProductService implements ProductService {
     public ProductEntity getById(Long id) {
         log.info("Getting product: id={}", id);
         var cacheKey = CACHE_KEY_PREFIX + id;
-
         ProductEntity entityFromCache = redisTemplate.opsForValue()
                 .get(cacheKey);
 

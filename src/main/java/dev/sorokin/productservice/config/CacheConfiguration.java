@@ -16,6 +16,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
+// включает аннотации @Cacheable, @CacheEvict, @CachePut
 @EnableCaching
 @Configuration
 public class CacheConfiguration {
@@ -37,6 +38,7 @@ public class CacheConfiguration {
         return redisTemplate;
     }
 
+    // менеджер для аннотации @Cacheable, @CacheEvict, @CachePut
     @Bean
     public CacheManager cacheManager(
             RedisConnectionFactory connectionFactory,

@@ -4,7 +4,6 @@ package dev.sorokin.productservice.api;
 import dev.sorokin.productservice.domain.CacheMode;
 import dev.sorokin.productservice.domain.ProductService;
 import dev.sorokin.productservice.domain.db.ProductEntity;
-import dev.sorokin.productservice.domain.db.ProductRepository;
 import dev.sorokin.productservice.domain.service.DbProductService;
 import dev.sorokin.productservice.domain.service.ManualCachingProductService;
 import dev.sorokin.productservice.domain.service.SpringAnnotationCachingProductService;

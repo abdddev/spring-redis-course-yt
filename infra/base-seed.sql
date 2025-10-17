@@ -1,4 +1,5 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
+DROP EXTENSION IF EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS product(
   id BIGSERIAL PRIMARY KEY,
@@ -16,7 +17,7 @@ SELECT
   'Description for Product ' || gs || ': ' || encode(digest(random()::text,'sha1'),'hex'),
   now() - (random() * interval '365 days'),
   now() - (random() * interval '30 days')
-FROM generate_series(1, 40000000) gs;
+FROM generate_series(1, 10000000) gs;
 
 ANALYZE;
 

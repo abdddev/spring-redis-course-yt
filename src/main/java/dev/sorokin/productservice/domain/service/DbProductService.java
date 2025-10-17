@@ -9,10 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-
-/**
- * ProductService implementation that works only with database (no caching)
- */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -64,4 +60,3 @@ public class DbProductService implements ProductService {
         productRepository.deleteById(id);
     }
 }
-

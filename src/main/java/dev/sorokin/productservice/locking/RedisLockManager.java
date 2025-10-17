@@ -2,9 +2,7 @@ package dev.sorokin.productservice.locking;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.ReturnType;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +22,6 @@ public class RedisLockManager {
                return redis.call('DEL', KEYS[1])
              else return 0 end
             """;
-
 
     public String tryLock(
             String key,

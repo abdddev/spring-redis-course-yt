@@ -5,7 +5,6 @@ import dev.sorokin.productservice.api.ProductUpdateRequest;
 import dev.sorokin.productservice.domain.ProductService;
 import dev.sorokin.productservice.domain.db.ProductEntity;
 import dev.sorokin.productservice.domain.db.ProductRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;

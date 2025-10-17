@@ -5,12 +5,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.util.RateLimiter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -62,5 +60,4 @@ public class RateLimitFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(req, response);
     }
-
 }

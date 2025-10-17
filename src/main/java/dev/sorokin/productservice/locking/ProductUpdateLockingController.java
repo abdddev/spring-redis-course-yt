@@ -3,8 +3,6 @@ package dev.sorokin.productservice.locking;
 import dev.sorokin.productservice.api.ProductDto;
 import dev.sorokin.productservice.api.ProductDtoMapper;
 import dev.sorokin.productservice.api.ProductUpdateRequest;
-import dev.sorokin.productservice.domain.CacheMode;
-import dev.sorokin.productservice.domain.ProductService;
 import dev.sorokin.productservice.domain.db.ProductEntity;
 import dev.sorokin.productservice.domain.service.DbProductService;
 import lombok.AllArgsConstructor;
@@ -58,5 +56,4 @@ public class ProductUpdateLockingController {
             redisLockManager.unlockLock(lockKey, lockId);
         }
     }
-
 }
