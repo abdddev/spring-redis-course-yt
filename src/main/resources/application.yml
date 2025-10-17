@@ -3,7 +3,7 @@ spring:
     name: redis-course-test
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
-    username: abludenov
+    username: ${SPRING_DATASOURCE_USERNAME:abludenov}
     password: ${SPRING_DATASOURCE_PASSWORD:}
     hikari:
       maximum-pool-size: 20
